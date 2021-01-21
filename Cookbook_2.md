@@ -32,13 +32,17 @@ You can also specify the three individual steps by replacing the `–autorecon-a
 7.  Visualise output using a command like
 
 ```bash
-tksurfer 001 lh pial
+cd /mydir/subjects
+freeview -v \
+001/mri/T1.mgz \
+001/mri/wm.mgz \
+001/mri/brainmask.mgz \
+001/mri/aseg.mgz:colormap=lut:opacity=0.2 \
+-f 001/surf/lh.white:edgecolor=blue \
+001/surf/lh.pial:edgecolor=red \
+001/surf/rh.white:edgecolor=blue \
+001/surf/rh.pial:edgecolor=red
 ```
 
-or
 
-```bash
-tksurfer 001 lh inflated
-```
-
-8.  There are quite a few problems that might arise. For a general tutorial on troubleshooting them see this [tutorial](http://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/OutputData) (which assumes you have downloaded the [tutorial data](http://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/Data)) but can easily be adapted for your data if you just substitute your subject ID in the command line commands given. Alternatively, have a look at [Cookbook 3](Cookbook_3.md).
+8.  There are quite a few problems that might arise. For a general tutorial on troubleshooting them see this [tutorial](http://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/TroubleshootingData) (which assumes you have downloaded the [tutorial data](http://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/Data)) but can easily be adapted for your data if you just substitute your subject ID in the command line commands given. Alternatively, have a look at [Cookbook 3](Cookbook_3.md).
